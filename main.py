@@ -226,5 +226,5 @@ def regenerate_data() -> None:
 dashboard()
 if __name__ == '__main__':
     # Lee el puerto que asigna la nube (por defecto 8080 si corres local)
-    port = int(os.environ.get('PORT', 8080))
+    port = int(os.environ.get('PORT', 10000))
     ui.run(port=port, host='0.0.0.0', storage_secret='un_secreto_seguro')
