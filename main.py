@@ -1,3 +1,4 @@
+import os
 import random
 
 from nicegui import ui
@@ -223,4 +224,7 @@ def regenerate_data() -> None:
 
 
 dashboard()
-ui.run(title='Explorador de valores', favicon='📊')
+if __name__ == '__main__':
+    # Lee el puerto que asigna la nube (por defecto 8080 si corres local)
+    port = int(os.environ.get('PORT', 8080))
+    ui.run(port=port, host='0.0.0.0', storage_secret='un_secreto_seguro')
